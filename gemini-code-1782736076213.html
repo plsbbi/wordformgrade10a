@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyên Đề Từ Loại Word Form Nâng Cao (Câu 1 - 50) - Ms Lê Hằng English</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #8854C0;
+            --accent-color: #FDCB6E;
+            --teal-color: #00C9A7;
+            --correct-color: #00D26A;
+            --wrong-color: #FF4757;
+            --text-color: #2D3436;
+            --card-bg: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Quicksand', sans-serif;
+            margin: 0; padding: 0;
+        }
+
+        body {
+            background: linear-gradient(-45deg, #8854C0, #FDCB6E, #00C9A7, #FF7675);
+            background-size: 400% 400%;
+            animation: gradientAnim 12s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 0; opacity: 0.12; pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%23ffffff'%3E%3Cpath d='M20 20 L30 20 L30 30 L20 30 Z M70 20 A 8 8 0 1 1 70 36 A 8 8 0 1 1 70 20 M50 70 L55 80 L65 80 L57 86 L60 96 L50 90 L40 96 L43 86 L35 80 L45 80 Z' /%3E%3C/g%3E%3C/svg%3E");
+            animation: patternFloat 25s linear infinite;
+        }
+
+        @keyframes gradientAnim {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes patternFloat {
+            0% { background-position: 0 0; }
+            100% { background-position: 500px 1000px; }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 780px;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        header h5 {
+            font-size: 1.05rem;
+            color: #FFFFFF;
+            background: rgba(0, 0, 0, 0.15);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+            font-weight: 700;
+        }
+
+        .warning-box {
+            background: #FFEAA7;
+            border: 4px solid #FDCB6E;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 0 #E17055;
+            color: #2D3436;
+            text-align: center;
+        }
+
+        .warning-box h4 {
+            font-size: 1.25rem;
+            color: #D63031;
+            margin-bottom: 8px;
+            font-weight: 900;
+        }
+
+        .warning-box p {
+            font-size: 0.98rem;
+            line-height: 1.5;
+            font-weight: 700;
+        }
+
+        .question-card {
+            background: var(--card-bg);
+            border-radius: 22px;
+            padding: 24px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 0 rgba(0,0,0,0.1);
+            border: 3px solid #E0E0E0;
+        }
+
+        .card-meta-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #A0A0A0;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .question-text {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 18px;
+            background: #F8F9FA;
+            padding: 14px;
+            border-radius: 12px;
+            border-left: 5px solid #6C5CE7;
+        }
+
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option-btn {
+            background: #FFFFFF;
+            border: 3px solid #E0E0E0;
+            border-radius: 18px;
+            padding: 14px 20px;
+            font-size: 1.02rem;
+            font-weight: 700;
+            color: var(--text-color);
+            text-align: left;
+            cursor: pointer;
+            box-shadow: 0 6px 0 #E0E0E0;
+            transition: transform 0.1s ease, box-shadow 0.1s ease;
+            width: 100%;
+        }
+
+        .option-btn:hover:not(.disabled) {
+            transform: scale(1.01) translateY(-2px);
+            box-shadow: 0 8px 0 #D0D0D0;
+            background: #FAEDFF;
+        }
+
+        .option-btn.correct {
+            background: var(--correct-color) !important;
+            border-color: #00B359 !important;
+            color: white !important;
+            box-shadow: 0 6px 0 #008040 !important;
+        }
+
+        .option-btn.wrong {
+            background: var(--wrong-color) !important;
+            border-color: #E03847 !important;
+            color: white !important;
+            box-shadow: 0 6px 0 #B32431 !important;
+        }
+
+        .option-btn.disabled {
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        @keyframes shakeAction {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-8px); }
+            40%, 80% { transform: translateX(8px); }
+        }
+
+        .shake-animation { animation: shakeAction 0.4s ease-in-out; }
+
+        .explanation-box {
+            margin-top: 20px;
+            background: #F3EAFE;
+            border-left: 6px solid var(--primary-color);
+            border-radius: 12px;
+            padding: 15px 18px;
+            display: none;
+            animation: slideDown 0.4s ease forwards;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .explanation-title {
+            color: var(--primary-color);
+            font-weight: 900;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+
+        .explanation-content {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333333;
+        }
+
+        .submit-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .submit-all-btn {
+            background: #6C5CE7; color: white; border: none;
+            padding: 16px 45px; font-size: 1.3rem; font-weight: 900;
+            border-radius: 22px; cursor: pointer; box-shadow: 0 6px 0 #4834D4;
+        }
+
+        #confetti-canvas {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 999;
+        }
+
+        .modal-mask {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6); display: flex;
+            justify-content: center; align-items: center; z-index: 1000;
+            opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+        }
+        .modal-mask.active { opacity: 1; pointer-events: auto; }
+        .modal-container {
+            background: white; border-radius: 25px; padding: 35px;
+            max-width: 520px; width: 90%; text-align: center;
+            border: 4px solid var(--accent-color);
+        }
+        .modal-score { font-size: 3rem; font-weight: 900; color: var(--primary-color); margin: 15px 0; }
+        .modal-feedback { font-size: 1.05rem; color: var(--text-color); font-weight: 700; line-height: 1.6; margin-bottom: 25px; }
+        .modal-btn {
+            background: var(--teal-color); color: white; border: none; padding: 12px 30px;
+            font-size: 1.05rem; font-weight: 700; border-radius: 14px; cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="container">
+        <header>
+            <h5>Giáo viên tạo: Ms Lê Hằng English</h5>
+        </header>
+
+        <div class="warning-box">
+            <h4>🏆 CHẶNG 5: PHẦN ÔN TẬP 50 CÂU WORD FORM MỚI 🏆</h4>
+            <p>Đã sửa toàn bộ lỗi font hiển thị. Hệ thống tự động chấm điểm và cung cấp phân tích ngữ cảnh chi tiết cùng bảng Word Family đầy đủ sau mỗi câu chọn!</p>
+        </div>
+
+        <div id="quiz-injector-node"></div>
+
+        <div class="submit-section">
+            <button class="submit-all-btn" onclick="processQuizEvaluation()">NỘP BÀI CHẤM ĐIỂM 🎉</button>
+        </div>
+    </div>
+
+    <div class="modal-mask" id="score-modal">
+        <div class="modal-container">
+            <h2>🏆 KẾT QUẢ KIỂM TRA 🏆</h2>
+            <div class="modal-score" id="score-text">0 / 50</div>
+            <div class="modal-feedback" id="feedback-text">Lời khuyên tuyển sinh từ cô giáo...</div>
+            <button class="modal-btn" onclick="reloadQuizLayout()">Làm Lại Từ Đầu 🔄</button>
+        </div>
+    </div>
+
+    <script>
+        const AudioCtxClass = window.AudioContext || window.webkitAudioContext;
+        let audioContextInstance = null;
+
+        function triggerSoundFeedback(status) {
+            try {
+                if (!audioContextInstance) audioContextInstance = new AudioCtxClass();
+                const osc = audioContextInstance.createOscillator();
+                const gain = audioContextInstance.createGain();
+                osc.connect(gain); gain.connect(audioContextInstance.destination);
+
+                if (status === 'correct') {
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(523.25, audioContextInstance.currentTime);
+                    osc.frequency.setValueAtTime(783.99, audioContextInstance.currentTime + 0.1);
+                    gain.gain.setValueAtTime(0.15, audioContextInstance.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, audioContextInstance.currentTime + 0.3);
+                    osc.start(); osc.stop(audioContextInstance.currentTime + 0.3);
+                } else {
+                    osc.type = 'triangle';
+                    osc.frequency.setValueAtTime(196, audioContextInstance.currentTime);
+                    osc.frequency.setValueAtTime(130, audioContextInstance.currentTime + 0.15);
+                    gain.gain.setValueAtTime(0.2, audioContextInstance.currentTime);
+                    osc.start(); osc.stop(audioContextInstance.currentTime + 0.35);
+                }
+            } catch (e) {}
+        }
+
+        // KHO DỮ LIỆU ĐÃ FIX LỖI FONT VÀ NÂNG CẤP ĐỘ SÂU GIẢI THÍCH
+        const dataset = [
+            { id: 1, text: "1. He fell off his motorbike, but his (INJURE) were not serious.", options: ["injuries", "injury", "injured", "injures"], correct: "injuries", exp: "<strong>Phân tích ngữ pháp:</strong> Ô trống đứng sau tính từ sở hữu <em>his</em> $\rightarrow$ Cần điền một <strong>Danh từ</strong>. Quan sát phía sau có trợ động từ tobe số nhiều là <em>were</em> $\rightarrow$ Danh từ này bắt buộc phải chia ở dạng số nhiều.<br><strong>Ngữ cảnh:</strong> Gốc từ <em>injure</em> (làm bị thương) chuyển thành danh từ số nhiều chỉ các vết thương là <em>injuries</em> (đổi đuôi -y thành -ies). Câu dịch: 'Anh ấy bị ngã xe máy, nhưng các vết thương không nghiêm trọng.'<br><br><strong>💎 Word Family:</strong><br>• Động từ: <strong>injure</strong> (làm bị thương)<br>• Danh từ: <strong>injury</strong> $\rightarrow$ số nhiều: <strong>injuries</strong> (vết thương)<br>• Tính từ: <strong>injured</strong> (bị thương - người)" },
+            { id: 2, text: "2. The family managed to get out of the burning house, but they lost nearly their (POSSESS)", options: ["possessions", "possession", "possessive", "possesses"], correct: "possessions", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng sau tính từ sở hữu <em>their</em> $\rightarrow$ Cần điền một <strong>Danh từ</strong> làm tân ngữ cho động từ đánh mất <em>lost</em>.<br><strong>Ngữ cảnh:</strong> Ngôi nhà bị cháy khiến họ mất đi toàn bộ của cải, tài sản tích cóp. Khi chỉ tài sản, đồ đạc cá nhân, danh từ này luôn ở dạng số nhiều là <em>possessions</em>. Câu dịch: 'Gia đình đã thoát ra khỏi ngôi nhà cháy, nhưng họ mất gần như toàn bộ tài sản.'" },
+            { id: 3, text: "3. He says he has no (INTEND) of resigning.", options: ["intention", "intend", "intentional", "intentions"], correct: "intention", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng sau từ hạn định phủ định <em>no</em> $\rightarrow$ Bắt buộc điền một <strong>Danh từ</strong>.<br><strong>Cấu trúc cố định:</strong> Ta có cụm từ luôn xuất hiện trong đề thi: <strong>have no intention of V-ing</strong> (không có ý định làm gì). Do đó điền danh từ <em>intention</em>. Câu dịch: 'Anh ấy nói anh ấy không có ý định từ chức.'" },
+            { id: 4, text: "4. The crowd showed it (APPROVE) by shouting insults the players.", options: ["disapproval", "approval", "disapprove", "approving"], correct: "disapproval", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng sau tính từ sở hữu <em>it</em> (viết nhầm của its) làm tân ngữ cho động từ <em>showed</em> $\rightarrow$ Cần điền một <strong>Danh từ</strong>.<br><strong>Ngữ cảnh trái nghĩa:</strong> Đám đông chửi bới, lăng mạ cầu thủ (shouting insults) $\rightarrow$ Họ đang thể hiện sự phản đối, không tán thành. Ta thêm tiền tố phủ định 'dis-' vào trước danh từ gốc approval thành <em>disapproval</em>." },
+            { id: 5, text: "5. Dozens of (CYCLE) are injured on the city roads every year.", options: ["cyclists", "cyclist", "cycling", "cycles"], correct: "cyclists", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng sau cụm từ chỉ lượng số nhiều <em>Dozens of</em> (hàng tá...) $\rightarrow$ Cần điền một <strong>Danh từ đếm được số nhiều</strong> làm chủ ngữ chính.<br><strong>Ngữ cảnh:</strong> Đối tượng gặp tai nạn trên đường phố phải là con người $\rightarrow$ Điền danh từ chỉ người đi xe đạp ở dạng số nhiều là <em>cyclists</em>." },
+            { id: 6, text: "6. The company is not taking any new (EMPLOY) this year.", options: ["employees", "employers", "employment", "employee"], correct: "employees", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng sau cụm từ hạn định <em>any new</em> trong câu phủ định $\rightarrow$ Cần điền một <strong>Danh từ số nhiều</strong>.<br><strong>Ngữ cảnh:</strong> Cụm từ 'take on/take' nghĩa là tuyển dụng nhân sự. Công ty không tuyển thêm người lao động mới $\rightarrow$ Điền danh từ chỉ người lao động số nhiều là <em>employees</em>." },
+            { id: 7, text: "7. Kate is studying to become a (LAW) .", options: ["lawyer", "law", "lawful", "lawyers"], correct: "lawyer", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng sau mạo từ số ít <em>a</em> và động từ chỉ nghề nghiệp <em>become</em> $\rightarrow$ Cần điền một <strong>Danh từ số ít chỉ người/nghề nghiệp</strong>.<br><strong>Ngữ cảnh:</strong> Kate đang học ngành luật (Law) để trở thành một luật sư $\rightarrow$ Điền danh từ chỉ người tương ứng là <em>lawyer</em>." },
+            { id: 8, text: "8. Motor – racing is an extremely (RISK) sport.", options: ["risky", "risk", "risked", "risks"], correct: "risky", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng giữa trạng từ mức độ <em>extremely</em> và danh từ <em>sport</em> $\rightarrow$ Cần điền một <strong>Tính từ</strong> bổ nghĩa theo trật tự từ loại (Adv + Adj + N).<br><strong>Ngữ cảnh:</strong> Đua xe ô tô là môn thể thao cực kỳ mạo hiểm, đầy rủi ro $\rightarrow$ Chuyển danh từ risk thành tính từ <em>risky</em>." },
+            { id: 9, text: "9. The duty of the police is the (MAINTAIN) of law and order.", options: ["maintenance", "maintain", "maintaining", "maintains"], correct: "maintenance", exp: "<strong>Phân tích ngữ pháp:</strong> Kẹp giữa cấu trúc mạo từ xác định <em>the</em> và giới từ <em>of</em> $\rightarrow$ Bắt buộc điền một <strong>Danh từ</strong>.<br><strong>Mẹo chính tả:</strong> Danh từ của động từ <em>maintain</em> biến đổi đặc biệt thành <em>maintenance</em> (sự duy trì). Câu dịch: 'Nhiệm vụ của cảnh sát là duy trì luật pháp và trật tự.'" },
+            { id: 10, text: "10. Our tomatoes are (RIPE) nicely: they will be ready to eat in about a week.", options: ["ripening", "ripe", "ripen", "ripened"], correct: "ripening", exp: "<strong>Phân tích ngữ pháp:</strong> Sau tobe <em>are</em> kết hợp trạng từ <em>nicely</em> và ngữ cảnh sắp chín tới $\rightarrow$ Cần động từ dạng V-ing tạo thì Hiện tại tiếp diễn chỉ sự biến đổi đang diễn ra.<br><strong>Ngữ cảnh:</strong> Chuyển tính từ ripe thành động từ ripen (chín), sau đó thêm đuôi -ing thành <em>ripening</em>. Câu dịch: 'Những quả cà chua của chúng tôi đang chín rất đẹp...'" },
+            { id: 11, text: "11. He is very anxious about the (LOSE) of his passport.", options: ["loss", "lose", "lost", "losses"], correct: "loss", exp: "<strong>Phân tích ngữ pháp:</strong> Kẹp giữa mạo từ <em>the</em> và giới từ <em>of</em> $\rightarrow$ Cần điền một <strong>Danh từ</strong>.<br><strong>Ngữ cảnh:</strong> Anh ấy lo lắng về 'việc đánh mất/sự thất lạc' hộ chiếu. Danh từ của động từ lose là <em>loss</em>." },
+            { id: 12, text: "12. This organization is concerned about the (DESTROY) of the rain forest.", options: ["destruction", "destroy", "destructive", "destroyer"], correct: "destruction", exp: "<strong>Phân tích ngữ pháp:</strong> Kẹp giữa cấu trúc mạo từ và giới từ <em>the... of</em> $\rightarrow$ Cần điền một <strong>Danh từ</strong> chỉ sự việc.<br><strong>Ngữ cảnh:</strong> Tổ chức lo ngại về 'sự tàn phá, phá hủy' rừng mưa nhiệt đới. Danh từ tương ứng là <em>destruction</em>." },
+            { id: 13, text: "13. Television is one the cheapest forms of (ENTERTAIN) .", options: ["entertainment", "entertaining", "entertain", "entertainer"], correct: "entertainment", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng sau giới từ <em>of</em> ở cuối câu $\rightarrow$ Cần điền một <strong>Danh từ</strong> làm tân ngữ.<br><strong>Cụm từ cố định:</strong> Ta có cụm từ <em>forms of entertainment</em> nghĩa là 'các hình thức giải trí'. Danh từ trừu tượng tương ứng là <em>entertainment</em>." },
+            { id: 14, text: "14. I was annoyed at his (REFUSE) to co – operate.", options: ["refusal", "refuse", "refused", "refusing"], correct: "refusal", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng sau tính từ sở hữu <em>his</em> $\rightarrow$ Bắt buộc điền một <strong>Danh từ</strong>.<br><strong>Hình thái từ đặc biệt:</strong> Động từ <em>refuse</em> chuyển sang danh từ bằng cách thêm hậu tố '-al' thành <em>refusal</em> (sự từ chối). Tránh nhầm đuôi -al này với tính từ con nhé!" },
+            { id: 15, text: "15. Look at this picture of Bill and his father: you can see the (LIKE) clearly, can’t you?", options: ["likeness", "like", "liking", "likeable"], correct: "likeness", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng sau mạo từ <em>the</em> làm tân ngữ trực tiếp chịu tác động cho hành động nhìn thấy <em>see</em> $\rightarrow$ Cần điền một <strong>Danh từ</strong>.<br><strong>Ngữ cảnh:</strong> Nhìn ảnh hai bố con có thể thấy rõ 'nét tương đồng, sự giống nhau' ngoại hình. Danh từ tương ứng là <em>likeness</em>." },
+            { id: 16, text: "16. Switzerland and Australia are both (MOUTAIN) countries.", options: ["mountainous", "mountain", "mountains", "mountaineer"], correct: "mountainous", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng trước bổ nghĩa đặc điểm tính chất cho danh từ quốc gia <em>countries</em> $\rightarrow$ Cần điền một <strong>Tính từ</strong> (Adj + N).<br><strong>Ngữ cảnh:</strong> Đây đều là các quốc gia 'vùng núi, có nhiều núi hình thành' $\rightarrow$ chọn tính từ <em>mountainous</em>." },
+            { id: 17, text: "17. My brother lives in an attractive (RESIDE) part of Paris.", options: ["residential", "resident", "residence", "reside"], correct: "residential", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng trước danh từ khu vực <em>part</em> nhằm bổ nghĩa phân loại $\rightarrow$ Cần điền một <strong>Tính từ</strong>.<br><strong>Cụm từ cố định:</strong> Ta có cụm danh từ chỉ nơi chốn sinh sống cư dân: <em>residential part / residential area</em> (khu dân cư). Do đó chọn tính từ <em>residential</em>." },
+            { id: 18, text: "18. He said good morning in a most (FRIEND) way.", options: ["friendly", "unfriendly", "friend", "friendship"], correct: "friendly", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng trước danh từ phương thức <em>way</em> nằm trong cụm 'in a most... way' $\rightarrow$ Cần một <strong>Tính từ</strong>.<br><strong>Ngữ cảnh:</strong> Lời chào buổi sáng lịch sự thể hiện phong thái 'thân thiện'. Chọn tính từ có đuôi đặc biệt là <em>friendly</em>." },
+            { id: 19, text: "19. We bought back several carved (WOOD) statues from our holiday in Africa.", options: ["wooden", "wood", "woody", "woods"], correct: "wooden", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng trước danh từ bức tượng <em>statues</em> $\rightarrow$ Cần điền một <strong>Tính từ chỉ chất liệu</strong> cấu thành sự vật.<br><strong>Ngữ cảnh:</strong> Bức tượng được tạc 'bằng gỗ' $\rightarrow$ Tính từ chất liệu tương ứng là <em>wooden</em>." },
+            { id: 20, text: "20. Our journey took nearly five hours. It was much (FAR) than I’d thought.", options: ["farther", "far", "farthest", "furthermore"], correct: "farther", exp: "<strong>Phân tích ngữ pháp:</strong> Có từ khóa so sánh <strong>than</strong> đứng sau và trạng từ nhấn mạnh mức độ <em>much</em> $\rightarrow$ Cần điền tính từ ở dạng <strong>So sánh hơn</strong>.<br><strong>Ngữ cảnh:</strong> Chuyến đi kéo dài 5 tiếng, xa hơn khoảng cách địa lý tưởng tượng $\rightarrow$ Dạng so sánh hơn của far chỉ khoảng cách vật lý là <em>farther</em> (hoặc further)." },
+            { id: 21, text: "21. John has just got (ENGAGE) to a girl he has known since he was a boy.", options: ["engaged", "engagement", "engage", "engaging"], correct: "engaged", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng sau động từ trạng thái biến đổi <em>got</em> và liên kết giới từ <em>to</em> $\rightarrow$ Áp dụng cấu trúc chỉ hôn nhân.<br><strong>Cụm từ cố định:</strong> Ta có cụm <em>get engaged to someone</em> nghĩa là 'đính hôn với ai đó'. Do đó điền tính từ phân từ <em>engaged</em>." },
+            { id: 22, text: "22. “This is not a good essay”, said the lecturer, “I find your arguments (CONVINCE)”", options: ["unconvincing", "convincing", "convinced", "convince"], correct: "unconvincing", exp: "<strong>Phân tích ngữ pháp:</strong> Áp dụng cấu trúc đánh giá tính chất cốt lõi sự vật: <strong>find + something + Adjective</strong> $\rightarrow$ Cần điền một <strong>Tính từ</strong>.<br><strong>Ngữ cảnh phủ định:</strong> Giảng viên chê bài luận không tốt (not a good essay) vì các lập luận 'không có tính thuyết phục' $\rightarrow$ Điền tính từ mang tiền tố phủ định là <em>unconvincing</em>." },
+            { id: 23, text: "23. More and more young people want to get a university (EDUCATE) .", options: ["education", "educational", "educate", "educator"], correct: "education", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng sau danh từ phụ bổ nghĩa <em>university</em> làm tân ngữ cho hành động get $\rightarrow$ Cần điền một <strong>Danh từ chính</strong> tạo danh từ ghép.<br><strong>Cụm từ cố định:</strong> Cụm <em>university education</em> nghĩa là 'nền giáo dục đại học / việc học đại học' $\rightarrow$ chọn danh từ <em>education</em>." },
+            { id: 24, text: "24. Sue went red with (EMBARRASS) .", options: ["embarrassment", "embarrass", "embarrassed", "embarring"], correct: "embarrassment", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng sau giới từ chỉ nguyên nhân tâm lý cảm xúc <strong>with</strong> $\rightarrow$ Vị trí này bắt buộc phải điền một <strong>Danh từ</strong>.<br><strong>Ngữ cảnh:</strong> Cụm từ <em>go red with sth</em> nghĩa là 'đỏ mặt vì cảm xúc gì'. Sue đỏ mặt vì 'sự ngượng ngùng, xấu hổ' $\rightarrow$ điền danh từ trừu tượng <em>embarrassment</em>." },
+            { id: 25, text: "25. Don’t believe a word Tom says. He’s a terrible (LIE) .", options: ["liar", "lie", "lying", "lies"], correct: "liar", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng sau mạo từ số ít <em>a</em> và tính từ miêu tả <em>terrible</em> $\rightarrow$ Cần điền một <strong>Danh từ số ít chỉ người</strong>.<br><strong>Ngữ cảnh:</strong> Đừng tin lời Tom nói (Don't believe a word...) vì cậu ta là một 'kẻ nói dối' $\rightarrow$ Danh từ tương ứng là <em>liar</em>." },
+            { id: 26, text: "26. It’s a lovely house, I agree, but can we afford to (MODERN) it?", options: ["modernize", "modern", "modernization", "modernity"], correct: "modernize", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng sau cấu trúc chỉ khả năng tài chính hành động **afford to** $\rightarrow$ Quy tắc bắt buộc điền một **Động từ nguyên mẫu**.<br><strong>Ngữ cảnh:</strong> Liệu chúng ta có đủ tiền để 'hiện đại hóa' ngôi nhà này không $\rightarrow$ chuyển tính từ modern thành động từ tác động <em>modernize</em>." },
+            { id: 27, text: "27. Brown is very warm and (CARE) person.", options: ["caring", "careful", "careless", "care"], correct: "caring", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng trước danh từ person và song hành liên từ <em>and</em> với tính từ chỉ phẩm chất tốt <em>warm</em> $\rightarrow$ Cần điền một <strong>Tính từ</strong> chỉ tính cách tích cực con người.<br><strong>Ngữ cảnh:</strong> Một người ấm áp và luôn 'biết quan tâm, chu đáo' với người khác $\rightarrow$ chọn tính từ đặc trưng là <em>caring</em>." },
+            { id: 28, text: "28. The man spoke with a (SOUTH) accent.", options: ["southern", "south", "southerly", "southwards"], correct: "southern", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng trước bổ nghĩa đặc tính vùng miền cho danh từ giọng nói <em>accent</em> $\rightarrow$ Cần điền một <strong>Tính từ chỉ phương hướng</strong>.<br><strong>Ngữ cảnh:</strong> Giọng nói đặc trưng của 'miền Nam' $\rightarrow$ chọn tính từ chỉ thuộc về phương nam là <em>southern</em>." },
+            { id: 29, text: "29. Bill and I have been friends since (CHILD) he used to live next door.", options: ["childhood", "child", "children", "childish"], correct: "childhood", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng sau giới từ chỉ mốc thời gian bắt đầu **since** $\rightarrow$ Vị trí này cần một **Danh từ trừu tượng chỉ giai đoạn cuộc sống**.<br><strong>Ngữ cảnh:</strong> Hai người là bạn của nhau kể từ 'thời thơ ấu/tuổi thơ' $\rightarrow$ điền danh từ tương ứng là <em>childhood</em>." },
+            { id: 30, text: "30. The woman has a blonde shoulder – (LONG) hair.", options: ["length", "long", "lengthen", "lengthy"], correct: "length", exp: "<strong>Phân tích ngữ pháp:</strong> Kết hợp với danh từ bộ phận cơ thể bằng dấu gạch ngang đặt trước danh từ hair để tạo lập một **Tính từ ghép** chỉ thông số đo lường kích thước.<br><strong>Công thức tính từ ghép:</strong> Danh từ bộ phận + Danh từ kích thước $\rightarrow$ danh từ chỉ độ dài của gốc long là <em>length</em>. Cụm: shoulder-length hair (tóc dài ngang vai)." },
+            { id: 31, text: "31. Applicants must be under 25, hard – working and (ENERGY) .", options: ["energetic", "energy", "energetically", "energize"], correct: "energetic", exp: "<strong>Phân tích ngữ pháp:</strong> Kết nối chuỗi song hành sau hệ từ tobe số nhiều 'must be' với tính từ chỉ phẩm chất hard-working $\rightarrow$ Cần điền một <strong>Tính từ</strong>.<br><strong>Ngữ cảnh:</strong> Các ứng viên phải dưới 25 tuổi, chăm chỉ và 'tràn đầy năng lượng, năng động' $\rightarrow$ chọn tính từ <em>energetic</em>." },
+            { id: 32, text: "32. Many modern refrigerators never need to be (FROST) .", options: ["defrosted", "frost", "frosted", "defrost"], correct: "defrosted", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng sau cấu trúc thể bị động hành động **need to be + V3/ed** $\rightarrow$ Cần điền một động từ quá khứ phân từ.<br><strong>Ngữ cảnh đảo ngược tính năng:</strong> Tủ lạnh đời mới không bao giờ cần con người phải 'rã đông / xả tuyết' đóng băng $\rightarrow$ thêm tiền tố loại bỏ 'de-' thành động từ defrost, chia bị động phân từ là <em>defrosted</em>." },
+            { id: 33, text: "33. When Bill and Jane retire, they’re planning to spend all their (SAVE) on a Mediterrance holiday.", options: ["savings", "save", "saved", "saving"], correct: "savings", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng sau cụm từ hạn định sở hữu 'all their' làm tân ngữ tiêu dùng cho động từ spend $\rightarrow$ Cần điền một <strong>Danh từ tài chính số nhiều</strong>.<br><strong>Ngữ cảnh:</strong> Khi về hưu người ta tiêu hết khoản 'tiền tiết kiệm' tích lũy. Danh từ tiền gửi tiết kiệm luôn ở dạng số nhiều có đuôi -s là <em>savings</em>." },
+            { id: 34, text: "34. Third time lucky! After two (SUCCESS) attempts, Mark’s finally passed his driving test.", options: ["unsuccessful", "successful", "success", "successfully"], correct: "unsuccessful", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng trước bổ nghĩa đặc điểm cho danh từ những lần thử sức <em>attempts</em> $\rightarrow$ Cần điền một <strong>Tính từ</strong>.<br><strong>Ngữ cảnh phủ định:</strong> Lần thứ ba mới may mắn (Third time lucky!) chứng tỏ hai lần thử thách trước đó đều 'thất bại, không thành công' $\rightarrow$ điền tính từ mang tiền tố phủ định <em>unsuccessful</em>." },
+            { id: 35, text: "35. They’re an incredibly (WASTE) family! You should see how much food they throw away.", options: ["wasteful", "waste", "wasting", "wastage"], correct: "wasteful", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng giữa trạng từ mức độ *incredibly* và danh từ *family* $\rightarrow$ Cần điền một <strong>Tính từ</strong> miêu tả hành vi lối sống (Adv + Adj + N).<br><strong>Ngữ cảnh:</strong> Họ vứt bỏ rất nhiều thức ăn lãng phí $\rightarrow; Đây là một gia đình vô cùng 'hoang phí, lãng phí' $\rightarrow$ điền tính từ <em>wasteful</em>." },
+            { id: 36, text: "36. You shouldn’t leave (VALUE) things on car seats in full view of people walking past.", options: ["valuable", "value", "valuables", "valueless"], correct: "valuable", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng trước bổ nghĩa tính chất giá trị cho danh từ đồ vật <em>things</em> $\rightarrow$ Cần điền một <strong>Tính từ</strong>.<br><strong>Ngữ cảnh:</strong> Lời khuyên bảo không nên để những món đồ 'có giá trị cao, quý giá' trên ghế xe dễ bị dòm ngó $\rightarrow$ chọn tính từ mang nghĩa khẳng định là <em>valuable</em>." },
+            { id: 37, text: "37. I’ve never had the same opinions as my father. When I was younger, we were always having (AGREE) .", options: ["disagreements", "agreements", "agreement", "disagreement"], correct: "disagreements", exp: "<strong>Phân tích ngữ pháp:</strong> Làm tân ngữ chịu tác động sau cụm động từ thường phàn nàn 'were always having' $\rightarrow$ Cần điền một danh từ số nhiều.<br><strong>Ngữ cảnh phủ định:</strong> Tôi chưa bao giờ có cùng ý kiến với bố (never had the same opinions) $\rightarrow$ Giữa hai người luôn xảy ra 'những sự bất đồng, cuộc tranh cãi' $\rightarrow$ điền danh từ phủ định dạng số nhiều <em>disagreements</em>." },
+            { id: 38, text: "38. Jeremy Hopkins’s performance in King Lear was the most (IMPRESS) .", options: ["impressive", "impression", "impress", "impressed"], correct: "impressive", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng ở vị trí cuối câu sau cấu trúc so sánh nhất của tính từ dài tính chất **the most...** đứng sau tobe $\rightarrow$ Cần điền một **Tính từ**.<br><strong>Ngữ cảnh:</strong> Màn biểu diễn của nam diễn viên là phần trình diễn 'gây ấn tượng sâu sắc, tuyệt vời nhất' $\rightarrow$ chọn tính từ đặc tính đuôi -ive là <em>impressive</em>." },
+            { id: 39, text: "39. Drug (ADDICT) is a growing problem particularly among young people.", options: ["addiction", "addict", "addicted", "addictive"], correct: "addiction", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng sau danh từ bổ trợ Drug tạo cụm danh từ ghép đóng vai trò chủ ngữ đứng trước động từ số ít 'is' $\rightarrow$ Cần điền một **Danh từ trừu tượng chỉ tệ nạn bệnh lý**.<br><strong>Ngữ cảnh:</strong> 'Nạn nghiện/chứng nghiện ngập' ma túy là một vấn đề nhức nhối $\rightarrow$ danh từ tương ứng là <em>addiction</em>." },
+            { id: 40, text: "40. Most banks have installed video cameras as part of their (SECURE) systems.", options: ["security", "secure", "secured", "securities"], correct: "security", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng trước danh từ hệ thống *systems* làm nhiệm vụ phụ trợ liên kết cụm từ loại danh từ ghép $\rightarrow$ Cần điền một danh từ.<br><strong>Cụm từ cố định:</strong> Cụm danh từ ghép thuật ngữ cực kỳ thông dụng: <em>security systems</em> nghĩa là 'các hệ thống an ninh/bảo mật' $\rightarrow$ điền danh từ <em>security</em>." },
+            { id: 41, text: "41. Elsa is being kept in an isolation ward because she’s highly (INFECT) .", options: ["infectious", "infection", "infect", "infected"], correct: "infectious", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng sau trạng từ chỉ mức độ cao *highly* và sau tobe *she’s* $\rightarrow$ Trật tự từ loại yêu cầu điền một <strong>Tính từ chỉ bản chất vật thể</strong> (tobe + Adv + Adj).<br><strong>Ngữ cảnh bệnh lý:</strong> Elsa phải nằm trong phòng cách ly vì bệnh của cô ấy 'rất dễ lây nhiễm, có tính truyền nhiễm cao' $\rightarrow$ tính từ phát tán là <em>infectious</em>." },
+            { id: 42, text: "42. My brother and I was sent to (BOARD) school when we were seven.", options: ["boarding", "board", "boarded", "boards"], correct: "boarding", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng trước bổ trợ cho danh từ nhà trường *school* tạo lập cụm danh từ phân loại hình giáo dục học thuật $\rightarrow$ Cần điền danh từ đuôi -ing phụ trợ.<br><strong>Cụm từ cố định:</strong> Cụm danh từ ghép cố định: <em>boarding school</em> nghĩa là 'trường nội trú' (học sinh ăn ở sinh hoạt tại trường) $\rightarrow$ điền danh từ <em>boarding</em>." },
+            { id: 43, text: "43. Phil was sentenced to seven years’ (PRISON) for his part in the arm robbery.", options: ["imprisonment", "prison", "prisoner", "imprison"], correct: "imprisonment", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng sau sở hữu cách chỉ lượng thời gian hình phạt hình sự 'seven years’' làm tân ngữ $\rightarrow$ Cần điền một <strong>Danh từ trừu tượng hình phạt</strong>.<br><strong>Ngữ cảnh pháp luật:</strong> Phil bị kết án 7 năm 'tù giam / hình phạt bỏ tù' vì tham gia cướp. Danh từ chỉ án tù giam xuất phát từ gốc prison là <em>imprisonment</em>." },
+            { id: 44, text: "44. There is no (SOLVE) to the problem of the beginning of the universe.", options: ["solution", "solve", "solvable", "solutions"], correct: "solution", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng sau cụm từ hạn định phủ định tuyệt đối cấu trúc 'There is no...' và đứng trước giới từ 'to' $\rightarrow$ Bắt buộc điền một <strong>Danh từ số ít</strong>.<br><strong>Cấu trúc đi kèm giới từ:</strong> Ta có cụm <em>solution to something</em> nghĩa là 'giải pháp/lời giải đáp cho vấn đề gì' $\rightarrow$ điền danh từ <em>solution</em>." },
+            { id: 45, text: "45. The chairman expressed doubts about the (SUIT) of showing the film on children TV.", options: ["suitability", "suitable", "suit", "suitably"], correct: "suitability", exp: "<strong>Phân tích ngữ pháp:</strong> Nằm kẹp giữa cấu trúc mạo từ và giới từ xác định <em>the... of</em> $\rightarrow$ Vị trí này chắc chắn phải điền một <strong>Danh từ chỉ thuộc tính tính chất</strong>.<br><strong>Ngữ cảnh:</strong> Chủ tịch nghi ngờ về 'sự phù hợp / tính thích hợp' của bộ phim trên sóng trẻ em $\rightarrow$ danh từ chỉ tính chất phù hợp là <em>suitability</em>." },
+            { id: 46, text: "46. O’Hara wanted a divorce because his wife had been (FAITH) .", options: ["unfaithful", "faithful", "faith", "faithfully"], correct: "unfaithful", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng sau hệ từ chia thì hoàn thành kết cấu *had been...* ở cuối mệnh đề $\rightarrow$ Cần điền một **Tính từ** đóng vai trò làm bổ ngữ tính chất con người.<br><strong>Ngữ cảnh ly hôn:</strong> O'Hara đòi ly hôn (wanted a divorce) vì người vợ 'không chung thủy / ngoại tình' $\rightarrow$ chọn tính từ mang tiền tố phủ định là <em>unfaithful</em>." },
+            { id: 47, text: "47. To be successful, an artist must show great (ORIGIN) .", options: ["originality", "original", "originally", "originate"], correct: "originality", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng sau tính từ miêu tả mức độ lớn rộng <em>great</em> làm tân ngữ chịu tác động cho hành động thể hiện <em>show</em> $\rightarrow$ Cần điền một <strong>Danh từ trừu tượng phẩm chất</strong>.<br><strong>Ngữ cảnh nghệ thuật:</strong> Người nghệ sĩ thành công phải thể hiện được 'tính độc đáo, sự nguyên bản sáng tạo độc quyền' $\rightarrow$ danh từ tương ứng là <em>originality</em>." },
+            { id: 48, text: "48. (INSPIRE) is not enough by itself: you must work hard too.", options: ["Inspiration", "Inspire", "Inspiring", "Inspirational"], correct: "Inspiration", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng ở vị trí đầu câu gánh vác vai trò làm **Chủ ngữ chính** cho mệnh đề đứng trước hệ từ 'is' $\rightarrow$ Bắt buộc điền một **Danh từ chỉ khái niệm**.<br><strong>Ngữ cảnh:</strong> 'Nguồn cảm hứng' tự thân nó là không đủ, con phải chăm chỉ nữa. Danh từ của động từ inspire là <em>Inspiration</em> (Lưu ý viết hoa đầu dòng)." },
+            { id: 49, text: "49. I didn’t know who it was – with a mask on, she was completely (RECOGNISE) .", options: ["unrecognizable", "recognizable", "recognition", "recognize"], correct: "unrecognizable", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng sau trạng từ tuyệt đối *completely* và sau hệ từ *she was* $\rightarrow$ Cần điền một <strong>Tính từ mang nghĩa phủ định trạng thái khả năng</strong> (tobe + Adv + Adj).<br><strong>Ngữ cảnh:</strong> Không biết đó là ai vì cô ấy đeo mặt nạ (with a mask on) nên trở thành 'không thể nhận diện/nhận ra nổi' $\rightarrow$ điền tính từ phủ định hậu tố -able là <em>unrecognizable</em>." },
+            { id: 50, text: "50. Telling lies is (MORAL) .", options: ["immoral", "moral", "morality", "morally"], correct: "immoral", exp: "<strong>Phân tích ngữ pháp:</strong> Đứng ở vị trí cuối câu sau hệ từ tobe số ít *is* nhằm mô tả tính chất đánh giá cho hành vi chủ ngữ $\rightarrow$ Cần điền một <strong>Tính từ</strong>.<br><strong>Ngữ cảnh đạo đức:</strong> Hành vi nói dối (Telling lies) là một hành động xấu xa, 'vô đạo đức / trái đạo đức'. Chọn tính từ mang tiền tố phủ định đặc trưng đi với chữ m là 'im-' $\rightarrow$ <em>immoral</em>.<br><br><strong>💎 Word Family:</strong><br>• Danh từ: <strong>moral</strong> (bài học đạo đức) $\rightarrow$ số nhiều: <strong>morals</strong> (phẩm hạnh), <strong>morality</strong> (đạo đức học)<br>• Tính từ: <strong>moral</strong> (có đạo đức) ↔ <strong>immoral</strong> (vô đạo đức, trái đạo đức)" }
+        ];
+
+        let studentAnswersTrack = {};
+
+        function mixOptionsRandomly(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function buildQuizLayout() {
+            const rootNode = document.getElementById('quiz-injector-node');
+            rootNode.innerHTML = "";
+
+            dataset.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'question-card';
+                card.id = `q-card-block-${item.id}`;
+
+                let randomizedOptions = [...item.options];
+                mixOptionsRandomly(randomizedOptions);
+
+                let buttonsListMarkup = `<div class="options-list">`;
+                randomizedOptions.forEach((textOption, optIdx) => {
+                    const alphabetPrefix = ["A", "B", "C", "D"];
+                    const statusCheck = (textOption === item.correct);
+                    buttonsListMarkup += `
+                        <button class="option-btn" data-correct="${statusCheck}" onclick="validateUserClick(this, ${item.id})">
+                            <strong>${alphabetPrefix[optIdx]}.</strong> ${textOption}
+                        </button>
+                    `;
+                });
+                buttonsListMarkup += `</div>`;
+
+                card.innerHTML = `
+                    <div class="card-meta-title">Câu kiểm tra Word Form số ${index + 1} / 50</div>
+                    <div class="question-text">${item.text}</div>
+                    ${buttonsListMarkup}
+                    <div class="explanation-box" id="explain-box-id-${item.id}">
+                        <div class="explanation-title">📌 BẢNG PHÂN TÍCH CHUYÊN SÂU KHÔNG LỖI FONT:</div>
+                        <div class="explanation-content">${item.exp}</div>
+                    </div>
+                `;
+                rootNode.appendChild(card);
+            });
+        }
+
+        function validateUserClick(buttonElement, questionId) {
+            if (studentAnswersTrack[questionId] !== undefined) return;
+
+            const isCorrect = buttonElement.getAttribute('data-correct') === 'true';
+            studentAnswersTrack[questionId] = isCorrect;
+
+            const currentCardNode = document.getElementById(`q-card-block-${questionId}`);
+            const siblingButtons = currentCardNode.querySelectorAll('.option-btn');
+
+            if (isCorrect) {
+                buttonElement.classList.add('correct');
+                triggerSoundFeedback('correct');
+                launchConfettiEffect();
+            } else {
+                buttonElement.classList.add('wrong');
+                currentCardNode.classList.add('shake-animation');
+                triggerSoundFeedback('wrong');
+
+                siblingButtons.forEach(btn => {
+                    if (btn.getAttribute('data-correct') === 'true') {
+                        btn.classList.add('correct');
+                    }
+                });
+
+                setTimeout(() => {
+                    currentCardNode.classList.remove('shake-animation');
+                }, 450);
+            }
+
+            siblingButtons.forEach(btn => btn.classList.add('disabled'));
+            document.getElementById(`explain-box-id-${questionId}`).style.display = "block";
+        }
+
+        const canvasElement = document.getElementById('confetti-canvas');
+        const ctxNode = canvasElement.getContext('2d');
+        let confettiCollection = [];
+
+        function dynamicCanvasResize() {
+            canvasElement.width = window.innerWidth;
+            canvasElement.height = window.innerHeight;
+        }
+        window.addEventListener('resize', dynamicCanvasResize);
+        dynamicCanvasResize();
+
+        function launchConfettiEffect() {
+            const colors = ['#FF4757', '#00D26A', '#8854C0', '#FDCB6E', '#00C9A7', '#FFFFFF'];
+            for (let i = 0; i < 35; i++) {
+                confettiCollection.push({
+                    x: Math.random() * canvasElement.width,
+                    y: Math.random() * canvasElement.height - canvasElement.height,
+                    size: Math.random() * 6 + 6,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    speedX: Math.random() * 4 - 2,
+                    speedY: Math.random() * 4 + 4,
+                    rotation: Math.random() * 360,
+                    rotationSpeed: Math.random() * 4 - 2
+                });
+            }
+        }
+
+        function animationLoop() {
+            ctxNode.clearRect(0, 0, canvasElement.width, canvasElement.height);
+            confettiCollection.forEach((p, index) => {
+                p.x += p.speedX; p.y += p.speedY; p.rotation += p.rotationSpeed;
+                ctxNode.save();
+                ctxNode.translate(p.x, p.y);
+                ctxNode.rotate((p.rotation * Math.PI) / 180);
+                ctxNode.fillStyle = p.color;
+                ctxNode.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+                ctxNode.restore();
+                if (p.y > canvasElement.height) {
+                    confettiCollection.splice(index, 1);
+                }
+            });
+            requestAnimationFrame(animationLoop);
+        }
+        requestAnimationFrame(animationLoop);
+
+        function processQuizEvaluation() {
+            let totalQuestions = dataset.length;
+            let correctCount = 0;
+
+            dataset.forEach(q => {
+                if (studentAnswersTrack[q.id] === true) {
+                    correctCount++;
+                }
+            });
+
+            let percentageResult = (correctCount / totalQuestions) * 100;
+            let finalTeacherComment = "";
+
+            if (percentageResult < 50) {
+                finalTeacherComment = "Nền tảng từ loại cấu trúc câu cần được gia cố thêm. Con hãy xem lại kỹ các tiền tố/hậu tố phủ định nâng cao và chép lại đầy đủ Word Family vào vở nhé!";
+            } else if (percentageResult >= 50 && percentageResult <= 80) {
+                finalTeacherComment = "Làm bài rất tốt! Con đã nắm chắc cách nhận diện danh từ số nhiều và các tiền tố trái nghĩa thường gặp.";
+            } else {
+                finalTeacherComment = "Xuất sắc chuẩn học sinh giỏi bản lĩnh! Con có phản xạ nhận diện từ ghép và biến đổi từ loại vô cùng nhạy bén.";
+            }
+
+            document.getElementById('score-text').innerText = `${correctCount} / ${totalQuestions}`;
+            document.getElementById('feedback-text').innerText = finalTeacherComment;
+            document.getElementById('score-modal').classList.add('active');
+
+            if (percentageResult >= 75) {
+                for (let k = 0; k < 5; k++) {
+                    setTimeout(launchConfettiEffect, k * 250);
+                }
+            }
+        }
+
+        function reloadQuizLayout() {
+            studentAnswersTrack = {};
+            confettiCollection = [];
+            document.getElementById('score-modal').classList.remove('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            setTimeout(buildQuizLayout, 400);
+        }
+
+        window.onload = function() {
+            buildQuizLayout();
+        };
+    </script>
+</body>
+</html>
